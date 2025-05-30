@@ -1,509 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="Benjamin Schnapp" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8">
+  <title>Benjamin Schnapp Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f6f6f6;
+      color: #222;
+    }
+    .resume-container {
+      max-width: 1050px;
+      margin: 40px auto;
+      display: flex;
+      box-shadow: 0 4px 18px #aaa2;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .left-column {
+      width: 350px;
+      background: #f3f4f6;
+      padding: 36px 28px 36px 28px;
+      box-sizing: border-box;
+      border-right: 1px solid #e3e3e3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 32px;
+    }
+    .right-column {
+      flex: 1;
+      padding: 36px 48px 36px 48px;
+      box-sizing: border-box;
+      background: #fff;
+    }
+    .section-title {
+      font-size: 1.06em;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #3b4c72;
+      text-transform: uppercase;
+    }
+    .left-section-title {
+      font-size: 1.08em;
+      color: #61677c;
+      margin-bottom: 8px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .main-header {
+      font-size: 2.2em;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+      color: #232439;
+    }
+    .sub-header {
+      font-size: 1.25em;
+      font-weight: 400;
+      margin-bottom: 18px;
+      color: #365681;
+    }
+    .contact-info {
+      font-size: 1em;
+      color: #1c283b;
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+    .contact-link {
+      color: #365681;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 2px;
+      word-break: break-all;
+    }
+    .summary-text {
+      font-size: 1em;
+      color: #323645;
+      margin-bottom: 0;
+      line-height: 1.7;
+    }
+    .edu-item, .skill-group, .lang-list, .passions-list {
+      margin-bottom: 18px;
+    }
+    .edu-title {
+      font-weight: 600;
+      font-size: 1em;
+      margin-bottom: 2px;
+    }
+    .edu-date {
+      color: #5b6575;
+      font-size: 0.95em;
+      margin-bottom: 6px;
+    }
+    .edu-desc {
+      color: #43495c;
+      font-size: 0.96em;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    .award-list {
+      font-size: 0.96em;
+      margin-bottom: 6px;
+      color: #7a8394;
+    }
+    .lang-list span, .passions-list span {
+      display: inline-block;
+      margin: 2px 8px 2px 0;
+      background: #e4f0fe;
+      border-radius: 12px;
+      padding: 3px 10px;
+      font-size: 0.97em;
+    }
+    .skill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-item {
+      font-size: 0.97em;
+      padding: 2px 10px;
+      background: #e4f0fe;
+      border-radius: 12px;
+      color: #2a4677;
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+    .right-section {
+      margin-bottom: 36px;
+    }
+    .job-title {
+      font-size: 1.08em;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      color: #23306e;
+    }
+    .job-company {
+      font-size: 1.08em;
+      font-weight: 500;
+      color: #4473b7;
+      margin-bottom: 2px;
+    }
+    .job-date {
+      color: #7988a2;
+      font-size: 0.95em;
+      margin-bottom: 7px;
+    }
+    .job-desc, .proj-desc {
+      font-size: 1em;
+      margin-bottom: 15px;
+      color: #353849;
+      line-height: 1.45;
+    }
+    .proj-title {
+      font-size: 1.01em;
+      font-weight: 600;
+      margin-top: 10px;
+      color: #35569a;
+    }
+    .proj-date {
+      color: #6e788f;
+      font-size: 0.97em;
+      margin-bottom: 2px;
+    }
+    .proj-link {
+      color: #227bcb;
+      font-size: 0.96em;
+      text-decoration: none;
+      margin-bottom: 2px;
+      margin-top: 2px;
+      display: inline-block;
+      word-break: break-all;
+    }
+    @media (max-width: 800px) {
+      .resume-container {
+        flex-direction: column;
+      }
+      .left-column {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e3e3e3;
+      }
+      .right-column {
+        padding: 28px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+    <!-- LEFT COLUMN -->
+    <div class="left-column">
+      <div>
+        <div class="main-header">Benjamin Schnapp</div>
+        <div class="sub-header">Robotics and Artificial Intelligence Software Engineer</div>
+        <div class="contact-info">
+          <div>SF Bay Area / Waterloo, ON</div>
+          <div>(650) 544-6177</div>
+          <a href="mailto:bdschnapp@uwaterloo.ca" class="contact-link">bdschnapp@uwaterloo.ca</a>
+          <a href="https://www.linkedin.com/in/benjaminschnapp" class="contact-link">linkedin.com/in/benjaminschnapp</a>
+        </div>
+      </div>
 
-    <title>Benjamin Schnapp</title>
-	<link rel="icon" type="image/x-icon" href="/assets/images/portfolio-icon.png">
-<!--
-Reflux Template
-https://templatemo.com/tm-531-reflux
--->
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+      <div>
+        <div class="left-section-title">Summary</div>
+        <div class="summary-text">
+          I am a passionate robotics engineer with <b>3.5 years experience</b> working in the robotics, automotive, and research industries.<br><br>
+          I love solving challenging problems and am always eager to get my hands dirty debugging code or working in the machine shop!
+        </div>
+      </div>
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="assets/css/templatemo-style.css" />
-    <link rel="stylesheet" href="assets/css/owl.css" />
-    <link rel="stylesheet" href="assets/css/lightbox.css" />
-  </head>
+      <div>
+        <div class="left-section-title">Education</div>
+        <div class="edu-item">
+          <div class="edu-title">University of Waterloo</div>
+          <div class="edu-desc">Master of Applied Science Candidate</div>
+          <div class="edu-date">09/2024 – 06/2026</div>
+          <div class="edu-desc">
+            Research focus on artificial intelligence and controls systems for applications including robotics and self-driving vehicles.
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">University of Waterloo</div>
+          <div class="edu-desc">Bachelor of Applied Science</div>
+          <div class="edu-date">09/2017 – 06/2023</div>
+          <div class="edu-desc">
+            Honors Mechatronics Engineering Co-operative Program with Artificial Intelligence Specialization.<br>
+            Graduated with Distinction.
+          </div>
+          <ul class="award-list">
+            <li>Mechatronics Capstone Award (04/2023)</li>
+            <li>Presidential Scholarship Award (04/2017)</li>
+          </ul>
+        </div>
+      </div>
 
-  <body>
-    <div id="page-wraper">
-      <!-- Sidebar Menu -->
-      <div class="responsive-nav">
-        <i class="fa fa-bars" id="menu-toggle"></i>
-        <div id="menu" class="menu">
-          <i class="fa fa-times" id="menu-close"></i>
-          <div class="container">
-            <div class="image">
-              <a href="#"><img src="assets/images/author-image.jpg" alt="" /></a>
-            </div>
-            <div class="author-content">
-              <h4>Reflux Me</h4>
-              <span>Software Engineer</span>
-            </div>
-            <nav class="main-nav" role="navigation">
-              <ul class="main-menu">
-                <li><a href="#section1">About Me</a></li>
-                <li><a href="#section2">Skills</a></li>
-                <li><a href="#section3">Experience</a></li>
-				<li><a href="#section4">Projects and Research</a></li>
-                <li><a href="#section5">Contact Me</a></li>
-              </ul>
-            </nav>
-            <div class="social-network">
-              <ul class="soial-icons">
-				<li>
-                  <a href="https://www.linkedin.com/in/benjaminschnapp/"><i class="fa fa-linkedin"></i></a>
-                </li>
-				<li>
-                  <a href="https://github.com/bdschnapp"><i class="fa fa-github"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.youtube.com/channel/UCYBj4L1CPcxzxODGOb8lk0w"><i class="fa fa-youtube"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.facebook.com/profile.php?id=100007619924692"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/ben_schnapp/"><i class="fa fa-instagram"></i></a>
-                </li>
-              </ul>
-            </div>
-            </div>
+      <div>
+        <div class="left-section-title">Languages</div>
+        <div class="lang-list">
+          <span>Python</span> <span>C/C++</span> <span>C</span> <span>Java</span> <span>MATLAB</span> <span>R</span> <span>ST/CFC/LD</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="left-section-title">Skills</div>
+        <div class="skill-group">
+          <span class="skill-item">PyTorch</span>
+          <span class="skill-item">ROS2</span>
+          <span class="skill-item">MoveIt</span>
+          <span class="skill-item">SW/HW Tests</span>
+          <span class="skill-item">Machine Learning</span>
+          <span class="skill-item">Control Systems</span>
+          <span class="skill-item">Embedded Systems</span>
+          <span class="skill-item">Microcontrollers</span>
+          <span class="skill-item">Distributed Systems</span>
+          <span class="skill-item">Sensors/Actuators</span>
+          <span class="skill-item">SolidWorks</span>
+          <span class="skill-item">AutoCAD</span>
+          <span class="skill-item">Rapid Prototyping</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="left-section-title">Passions</div>
+        <div class="passions-list">
+          <span>Volunteering - Street Life Ministries</span>
+          <span>Soccer</span>
+          <span>Surfing</span>
+          <span>Hiking</span>
+          <span>Puzzles</span>
+          <span>Board Games</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-column">
+      <!-- EXPERIENCE -->
+      <div class="right-section">
+        <div class="section-title">Professional Experience</div>
+
+        <div>
+          <div class="job-title">Software Engineer</div>
+          <div class="job-company">CPLANE.ai</div>
+          <div class="job-date">05/2024 – Present</div>
+          <div class="job-desc">
+            Developing critical software and infrastructure for high availability distributed systems, modernizing industrial process automation by blending IT and OT into a unified system. Proven ability to enhance system reliability and performance while driving innovation.
+          </div>
+        </div>
+
+        <div>
+          <div class="job-title">Embedded Software Engineer Intern, Body Controls</div>
+          <div class="job-company">Rivian</div>
+          <div class="job-date">08/2021 – 12/2021</div>
+          <div class="job-desc">
+            Wrote embedded C code for body controls features. Worked closely with the systems design teams to define software requirements and ensure the features I designed met functional and safety (ISO26262) requirements. Created advanced vehicle models in Python for automated SiL testing.
+          </div>
+        </div>
+
+        <div>
+          <div class="job-title">Embedded Software Engineer Intern, Electric Power Conversion</div>
+          <div class="job-company">Rivian</div>
+          <div class="job-date">01/2021 – 04/2021</div>
+          <div class="job-desc">
+            Created a Python tool used to set and record data in the embedded processor and provide remote state control of the system for debugging. Implemented and optimized the required data acquisition features in the embedded C code using XCP over CAN and gRPC protocols.
+          </div>
+        </div>
+
+        <div>
+          <div class="job-title">Software Engineer Intern</div>
+          <div class="job-company">Plenty</div>
+          <div class="job-date">06/2020 – 08/2020</div>
+          <div class="job-desc">
+            Improved generalizability and efficiency of data pipelines in a traceability service, and integrated the traceability service with factory SCADA and MES services.
+          </div>
+        </div>
+        <div>
+          <div class="job-title">Automation Controls Engineer Intern</div>
+          <div class="job-company">Plenty</div>
+          <div class="job-date">09/2019 – 12/2019</div>
+          <div class="job-desc">
+            Designed control systems for production line robotics that improved factory production rates by 10%. Developed algorithms for object detection and actuator control, designed electrical panels for power distribution, and coordinated the integration of sensors into the mechanical design. Created human robot interfaces in Ignition for automating data collection and function validation, as well as providing operator override control.
+          </div>
+        </div>
+        <div>
+          <div class="job-title">Mechanical Engineer Intern</div>
+          <div class="job-company">Dishcraft Robotics</div>
+          <div class="job-date">02/2018 – 04/2019</div>
+          <div class="job-desc">
+            Designed and executed reliability testing for electromechanical prototypes of robot subsystems. Assisted with the manufacturing and assembly of the robot. Created part drawings and assembly documentation and communicated requirements with manufacturers, or machined the parts in the shop. Automated purchasing tasks and inventory management by integrating SolidWorks PDM with Arena PLM using Python.
           </div>
         </div>
       </div>
 
-      <section class="section about-me" data-section="section1">
-        <div class="container">
-          <div class="section-heading">
-            <h2>About Me</h2>
-            <div class="line-dec"></div>
-            <span
-              >This is a Bootstrap v4.2.1 CSS Template for you. Edit and use
-              this layout for your site. Updated on 21 May 2019 for repeated main menu HTML code.</span
-            >
-          </div>
-          <div class="left-image-post">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="left-image">
-                  <img src="assets/images/left-image.jpg" alt="" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="right-text">
-                  <h4>Reflux HTML CSS Template</h4>
-                  <p>
-                    Donec tristique feugiat lacus, at sollicitudin nunc euismod
-                    sed. Mauris viverra, erat non sagittis gravida, elit dui
-                    mollis ante, sit amet eleifend purus ligula eget eros. Sed
-                    tincidunt quam vitae neque pharetra dignissim eget ut
-                    libero.
-                  </p>
-                  <div class="white-button">
-                    <a href="#">Read More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="right-image-post">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="left-text">
-                  <h4>Sed sagittis rhoncus velit</h4>
-                  <p>
-                    Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas. Vestibulum fermentum
-                    eleifend nibh, vitae sodales elit finibus pretium.
-                    Suspendisse potenti. Ut sollicitudin risus a sollicitudin
-                    semper.
-                  </p>
-                  <div class="white-button">
-                    <a href="#">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="right-image">
-                  <img src="assets/images/right-image.jpg" alt="" />
-                </div>
-              </div>
-            </div>
+      <!-- PROJECTS & RESEARCH -->
+      <div class="right-section">
+        <div class="section-title">Projects and Research</div>
+        <div>
+          <div class="job-title">Graduate Researcher, Mechatronic Vehicle Systems Lab</div>
+          <div class="job-company">University of Waterloo</div>
+          <div class="job-date">09/2024 – Present</div>
+          <div class="job-desc">
+            Leveraging machine learning algorithms and control theory to develop adaptive cruise control and lane keep assist controllers for autonomous buses. Researching the use of decision transformers and large language models for end-to-end self-driving.
           </div>
         </div>
-      </section>
-
-      <section class="section my-services" data-section="section2">
-        <div class="container">
-          <div class="section-heading">
-            <h2>What I’m good at?</h2>
-            <div class="line-dec"></div>
-            <span
-              >Curabitur leo felis, rutrum vitae varius eu, malesuada a tortor.
-              Vestibulum congue leo et tellus aliquam, eu viverra nulla semper.
-              Nullam eu faucibus diam. Donec eget massa ante.</span
-            >
+        <div>
+          <div class="job-title">Undergraduate Researcher, Robohub</div>
+          <div class="job-company">University of Waterloo</div>
+          <div class="job-date">
+            06/2022 – 04/2023<br>
+            <a href="https://www.youtube.com/watch?v=Rx3ZUtp12tc&t=53s" class="proj-link" target="_blank">Video: Autonomous Nursing Assistant Robot</a>
           </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="first-service-icon service-icon"></div>
-                <h4>HTML5 &amp; CSS3</h4>
-                <p>
-                  Phasellus non convallis dolor. Integer tempor hendrerit arcu
-                  at bibendum. Sed ac ante non metus vehicula congue quis eget
-                  eros.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="second-service-icon service-icon"></div>
-                <h4>Creative Ideas</h4>
-                <p>
-                  Proin lacus massa, eleifend sed fermentum in, dignissim vel
-                  metus. Nunc accumsan leo nec felis porttitor, ultricies
-                  faucibus purus mollis.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="third-service-icon service-icon"></div>
-                <h4>Easy Customize</h4>
-                <p>
-                  Integer suscipit condimentum aliquet. Nam quis risus metus.
-                  Nullam faucibus quam eget arcu pretium tincidunt. Nam libero
-                  dui.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="fourth-service-icon service-icon"></div>
-                <h4>Admin Dashboard</h4>
-                <p>
-                  Vivamus et dui a massa venenatis fringilla. Proin lacus massa,
-                  eleifend sed fermentum in, dignissim vel metus. Nunc accumsan
-                  leo nec felis porttitor.
-                </p>
-              </div>
-            </div>
+          <div class="job-desc">
+            Created an autonomous nursing assistant robot using the Kinova Movo and Jaco2 platform. Upgraded existing codebase from ROS Indigo to Noetic. Designed and implemented the manipulation and grasping stack using MoveIt. Created a task manager application which enabled intuitive human-robot interaction. Assisted with the development and integration of the navigation, localization, and computer vision stacks.
+
           </div>
         </div>
-      </section>
-
-      <section class="section my-work" data-section="section3">
-        <div class="container">
-          <div class="section-heading">
-            <h2>My Work</h2>
-            <div class="line-dec"></div>
-            <span
-              >Aenean sollicitudin ex mauris, lobortis lobortis diam euismod sit
-              amet. Duis ac elit vulputate, lobortis arcu quis, vehicula
-              mauris.</span
-            >
+        <div>
+          <div class="job-title">Robotics Research Programmer, Social Intelligent Robotics Research Lab</div>
+          <div class="job-company">University of Waterloo</div>
+          <div class="job-date">
+            05/2022 – 08/2022<br>
+            <a href="https://doi.org/10.1109/RO-MAN57019.2023.10309350" class="proj-link" target="_blank">Publication: IEEE RO-MAN 2023</a>
           </div>
-          <div class="row">
-            <div class="isotope-wrapper">
-              <form class="isotope-toolbar">
-                <label
-                  ><input
-                    type="radio"
-                    data-type="*"
-                    checked=""
-                    name="isotope-filter"
-                  />
-                  <span>all</span></label
-                >
-                <label
-                  ><input
-                    type="radio"
-                    data-type="people"
-                    name="isotope-filter"
-                  />
-                  <span>people</span></label
-                >
-                <label
-                  ><input
-                    type="radio"
-                    data-type="nature"
-                    name="isotope-filter"
-                  />
-                  <span>nature</span></label
-                >
-                <label
-                  ><input
-                    type="radio"
-                    data-type="animals"
-                    name="isotope-filter"
-                  />
-                  <span>animals</span></label
-                >
-              </form>
-              <div class="isotope-box">
-                <div class="isotope-item" data-type="nature">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-01.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-01.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>First Title</h4>
-                      <span>free to use our template</span>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="isotope-item" data-type="people">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-02.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-02.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>Second Title</h4>
-                      <span>please tell your friends</span>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="isotope-item" data-type="animals">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-03.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-03.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>Item Third</h4>
-                      <span>customize anything</span>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="isotope-item" data-type="people">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-04.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-04.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>Item Fourth</h4>
-                      <span>Re-distribution not allowed</span>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="isotope-item" data-type="nature">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-05.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-05.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>Fifth Awesome</h4>
-                      <span>Ut sollicitudin risus</span>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="isotope-item" data-type="animals">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-06.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-06.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>Awesome Sixth</h4>
-                      <span>Donec eget massa ante</span>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-            </div>
+          <div class="job-desc">
+            Designed a social robotic system and companion app which analyzed the user's heart rate data and provided real-time personalized suggestions. Implemented various robot-guided physical and mental well-being exercises which activated sympathetic or parasympathetic responses. Evaluated effectiveness of the system with a pilot study.
           </div>
         </div>
-      </section>
-
-      <section class="section contact-me" data-section="section5">
-        <div class="container">
-          <div class="section-heading">
-            <h2>Contact Me</h2>
-            <div class="line-dec"></div>
-            <span
-              >Fusce eget nibh nec justo interdum condimentum. Morbi justo ex,
-              efficitur at ante ac, tincidunt maximus ligula. Lorem ipsum dolor
-              sit amet, consectetur adipiscing elit.</span
-            >
-          </div>
-          <div class="row">
-            <div class="right-content">
-              <div class="container">
-                <form id="contact" action="" method="post">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <fieldset>
-                        <input
-                          name="name"
-                          type="text"
-                          class="form-control"
-                          id="name"
-                          placeholder="Your name..."
-                          required=""
-                        />
-                      </fieldset>
-                    </div>
-                    <div class="col-md-6">
-                      <fieldset>
-                        <input
-                          name="email"
-                          type="text"
-                          class="form-control"
-                          id="email"
-                          placeholder="Your email..."
-                          required=""
-                        />
-                      </fieldset>
-                    </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        <input
-                          name="subject"
-                          type="text"
-                          class="form-control"
-                          id="subject"
-                          placeholder="Subject..."
-                          required=""
-                        />
-                      </fieldset>
-                    </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        <textarea
-                          name="message"
-                          rows="6"
-                          class="form-control"
-                          id="message"
-                          placeholder="Your message..."
-                          required=""
-                        ></textarea>
-                      </fieldset>
-                    </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        <button type="submit" id="form-submit" class="button">
-                          Send Message
-                        </button>
-                      </fieldset>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
-
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/lightbox.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script>
-      //according to loftblog tut
-      $(".main-menu li:first").addClass("active");
-
-      var showSection = function showSection(section, isAnimate) {
-        var direction = section.replace(/#/, ""),
-          reqSection = $(".section").filter(
-            '[data-section="' + direction + '"]'
-          ),
-          reqSectionPos = reqSection.offset().top - 0;
-
-        if (isAnimate) {
-          $("body, html").animate(
-            {
-              scrollTop: reqSectionPos
-            },
-            800
-          );
-        } else {
-          $("body, html").scrollTop(reqSectionPos);
-        }
-      };
-
-      var checkSection = function checkSection() {
-        $(".section").each(function() {
-          var $this = $(this),
-            topEdge = $this.offset().top - 80,
-            bottomEdge = topEdge + $this.height(),
-            wScroll = $(window).scrollTop();
-          if (topEdge < wScroll && bottomEdge > wScroll) {
-            var currentId = $this.data("section"),
-              reqLink = $("a").filter("[href*=\\#" + currentId + "]");
-            reqLink
-              .closest("li")
-              .addClass("active")
-              .siblings()
-              .removeClass("active");
-          }
-        });
-      };
-
-      $(".main-menu").on("click", "a", function(e) {
-        e.preventDefault();
-        showSection($(this).attr("href"), true);
-      });
-
-      $(window).scroll(function() {
-        checkSection();
-      });
-    </script>
-  </body>
+  </div>
+</body>
 </html>
