@@ -11,6 +11,19 @@
       background: #bababa;
       color: #222;
     }
+    .avatar {
+      display: flex;
+      justify-content: center;
+    }
+    .avatar img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px #0001;
+      margin-bottom: 10px;
+    }
     .resume-container {
       max-width: 1050px;
       margin: 40px auto;
@@ -57,19 +70,20 @@
       font-size: 2.2em;
       font-weight: 900;
       letter-spacing: 2px;
-      margin-bottom: 5px;
+      margin-bottom: 25px;
+      text-align: center;
       color: #232439;
     }
     .sub-header {
       font-size: 1.25em;
       font-weight: 400;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       color: #365681;
     }
     .contact-info {
       font-size: 1em;
       color: #1c283b;
-      margin-bottom: 4px;
+      margin-bottom: 0px;
       line-height: 1.5;
     }
     .contact-link {
@@ -106,9 +120,11 @@
     }
     .award-list {
       font-size: 0.96em;
-      margin-bottom: 6px;
+      margin: 6px 0 0;
+      padding-left: 25px;
       color: #686c7c;
     }
+    .award-list li{ margin: 0; }
     .lang-list span, .passions-list span {
       display: inline-block;
       margin: 2px 8px 2px 0;
@@ -198,10 +214,14 @@
     <!-- LEFT COLUMN -->
     <div class="left-column">
       <div>
+        <div class="avatar">
+          <img src="headshot.jpeg" alt="Benjamin Schnapp headshot" loading="lazy">
+        </div>
         <div class="main-header">Benjamin Schnapp</div>
         <div class="sub-header">Robotics and Artificial Intelligence Software Engineer</div>
         <div class="contact-info">
           <div>SF Bay Area / Waterloo, ON</div>
+          <br>
           <div>(650) 544-6177</div>
           <a href="mailto:bdschnapp@uwaterloo.ca" class="contact-link">bdschnapp@uwaterloo.ca</a>
           <a href="https://www.linkedin.com/in/benjaminschnapp" class="contact-link">linkedin.com/in/benjaminschnapp</a>
@@ -211,7 +231,7 @@
       <div>
         <div class="left-section-title">Summary</div>
         <div class="summary-text">
-          I am a passionate robotics engineer with <b>3.5 years experience</b> working in the robotics, automotive, and research industries.<br><br>
+          I am a passionate robotics engineer with <b>3.5 years experience</b> working in the robotics, automotive, and research industries.<br>
           I love solving challenging problems and am always eager to get my hands dirty debugging code or working in the machine shop!
         </div>
       </div>
